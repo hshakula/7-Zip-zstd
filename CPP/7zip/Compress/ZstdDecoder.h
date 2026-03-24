@@ -89,11 +89,10 @@ public:
 public:
   Z7_IFACE_COM7_IMP(ICompressSetCoderMt)
 
-  Z7_COM7F_IMF(SetOutStreamSize(const UInt64 *outSize));
+  Z7_IFACE_COM7_IMP(ICompressSetOutStreamSize)
 #ifndef Z7_NO_READ_FROM_CODER
-  Z7_COM7F_IMF(SetInStream(ISequentialInStream *inStream));
-  Z7_COM7F_IMF(ReleaseInStream());
-  Z7_COM7F_IMF(Read(void *data, UInt32 size, UInt32 *processedSize));
+  Z7_IFACE_COM7_IMP(ICompressSetInStream)
+  Z7_IFACE_COM7_IMP(ISequentialInStream)
   UInt64 GetInputProcessedSize() const { return _processedIn; }
 #endif
 
